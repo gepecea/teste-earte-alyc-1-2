@@ -1,15 +1,4 @@
 /* =========================
-   BANCO DE DADOS (CSV LOCAL)
-
-   fetch("URL_DA_PLANILHA_PUBLICADA_CSV")
-  .then(res => res.text())
-  .then(csv => {
-    dados = processarCSV(csv);
-    renderizar(dados);
-  });
-
-   ========================= */
-
 const csvLocal = `
 tipo,codigo,descricao,autor,local,pais,link
 Livros e capítulos | Libros y capítulos | Books and chapters,livro,La concepción de ambiente en las tesis de maestrías en ciencias sociales La concepción de ambiente en las tesis de maestrías en ciencias socialesLa concepción de ambiente en las tesis de maestrías en ciencias socialesLa concepción de ambiente en las tesis de maestrías en ciencias socialesLa concepción de ambiente en las tesis de maestrías en ciencias socialesLa concepción de ambiente en las tesis de maestrías en ciencias sociales,Katherine Higuita Alzate,Institutional Repository of the Pontifical Bolivarian University,Colombia,https://repository.upb.edu.co/handle/20.500.11912/9777
@@ -19,6 +8,17 @@ Disertaciones de maestría | Dissertações de mestrado | Master dissertations,t
 Capítulos de libro | Capítulos de livro | Book chapters,livro|co,Educación ambiental y participación comunitaria en zonas afectadas por el petróleo,Ana Lucía Torres,Repositorio Universidad del Valle,Colombia,https://bibliotecadigital.univalle.edu.co/
 Artículos en revistas | Artigos em revistas | Journal articles,artigo,Políticas educativas y sostenibilidad en contextos extractivos,Pedro Henrique Silva,Repositorio FGV,Brasil,https://bibliotecadigital.fgv.br/
 `;
+
+
+   ========================= */
+   BANCO DE DADOS (CSV LOCAL)
+
+   fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQN3tihC9fA9hwIDLwI9stuL1-UQOZVubJ6G0_bOMDej3TUySXK-yO9unf3sbW40ph9HEv6-1DH2XN-/pub?gid=199551209&single=true&output=csv")
+  .then(res => res.text())
+  .then(csv => {
+    dados = processarCSV(csv);
+    renderizar(dados);
+  });
 
 /* =========================
    VARIÁVEIS GLOBAIS
@@ -232,4 +232,5 @@ window.addEventListener("scroll", function() {
       elements[i].style.display = "none";
     }
   }
+
 });
