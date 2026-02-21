@@ -1,0 +1,167 @@
+*{
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+.pre-content{
+	width: 99vw;
+	height: 45vh;
+	margin: 0;
+}
+
+.txt-2{
+	font-size: 2em;
+}
+	.txt-2-1{
+		font-size: 1.9em;
+		text-indent: 10vh;
+	}
+.txt-1-5{
+	font-size: 1.5em;
+}
+
+	.txt-1-5-1{
+		font-size: 1.5em;
+		text-indent: 10vh;
+}
+.txt-1-3{
+	font-size: 1.3em;
+}
+.txt-1{
+	font-size: 1em;
+}
+.bold{
+	font-weight: bold;
+}
+.center{
+	text-align: center;
+}
+.justify{
+	text-align: justify;
+}
+.color1{
+	color: #5FCF84;
+}
+.color2{
+	color: #DAA520;
+}
+.color3{
+	color: #397D50;
+}
+.grey-scale{
+	filter: grayscale(1);
+}
+.bg1{
+	width: 99vw;
+	background-color: #f8f8ff;
+}
+.highlight-yellow {
+    background-color: yellow;
+    padding: 4px 10px;
+}
+.titulo-1{
+	font-size: 2em;
+	font-weight: bold;
+	text-align: center;
+	margin: 8vh auto;
+}
+		
+	.titulo-1-2{
+		font-size: 2em;
+		font-weight: bold;
+		text-align: left;
+		margin: 5vh 0;
+	}
+
+.titulo-2{
+	font-size: 1.7em;
+	font-weight: bold;
+	text-align: left;
+	margin: 5vh 10vh;
+}
+		.titulo-2-1{
+			font-size: 1.7em;
+			text-align: center;
+			margin: 3vh auto;
+		}
+
+		.titulo-2-2{
+			font-size: 1.5em;
+			text-align: center;
+			margin: 3vh auto auto auto;
+			font-weight: bold;
+		}
+		.titulo-2-3{
+				font-size: 1.7em;
+				text-align: center;
+				margin: 3vh 10vw;
+			}
+.titulo-3{
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: left;
+	margin: 5vh 10vh;
+}
+.titulo-4{
+	font-size: 1.5em;
+	text-align: left;
+	font-style: italic;
+	margin: 5vh 10vh;
+}
+.titulo-5{
+	font-size: 1.5em;
+	text-align: justify;
+	margin: 5vh 10vh;
+	text-indent: 10vh;
+	line-height: 1.5em;
+}
+		.titulo-5-1{
+			font-size: 1.5em;
+			text-align: justify;
+			line-height: 1.5em;		
+			text-indent: 3em;
+		}
+.titulo-6{
+	font-size: 1.5em;
+	text-align: justify;
+	margin: 5vh 10vh;
+	line-height: 1.5em;
+}
+.titulo-7{
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: left;
+	margin: 20px auto;
+}
+.titulo-8{
+	font-size: 1.3em;
+	text-align: justify;
+	margin: 20px;
+}
+.titulo-10{
+	font-size: 0.6em;
+	text-align: justify;
+}
+
+.lista{
+	font-size: 1.5em;
+	text-align: justify;
+	margin: 5vh 10vh 5vh 10vw;
+	line-height: 1.5em;
+}
+.lista-2{
+	font-size: 1.5em;
+	text-align: justify;
+	margin: 5vh 10vh 5vh 15vw;
+	line-height: 1.5em;
+}
+.ajuste-1{
+	width: 90%;
+}
+.txt-margin-tb-1{
+	margin: 10vh auto;
+}
+.txt-margin-auto{
+	margin: auto;
+}

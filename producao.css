@@ -1,0 +1,224 @@
+.pre-content{
+    width: 99vw;
+    height: 45vh;
+    margin: 0;
+}
+
+.acervo-apresentacao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    height: 20vh;
+    justify-content: center;
+    margin: 5vh auto;
+}
+    .apresentacao{
+        width: 100%;
+        font-size: 1.5em;
+        text-align: center;
+        line-height: 1.5em;
+    }
+
+.acervo{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: 95vw;
+    margin: auto;
+    margin-bottom: 5vh;    
+}
+    .filtro{
+        display: flex;
+        flex-wrap: wrap;
+        width: clamp(20%, 23%, 30%);
+        height: clamp(85vh, 90vh, 95vh);
+        background-color: #F5F5FC;
+        margin-top: 2.5vh;   
+    }
+/*seta ocultar filtro*/
+        .seta-filtro-div{
+            display: flex;
+            align-items: top;
+            margin: 2.5vh 15px 0 0;
+            height: 100px;           
+        }
+            .filtro-seta{
+                background-color: #F5F5FC;
+                font-size: 1rem;
+                padding: 15px 5px;
+                border-radius: 0 8px 8px 0;
+                border: none;
+            }
+
+/* filtro*/
+        .filtro-titulo{
+            margin: auto ;
+            align-content: center;
+        }
+            .busca{
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+                text-align: center;
+                margin: auto 20px;
+                width: 100%;
+                height: 40px;
+                position: relative;
+                z-index: 0;
+                background-color: red;
+            }
+                #busca{
+                    width: 100%;
+                    height: 100%;
+                    margin: auto;
+                }
+
+            .localizar{
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                height: 5%;
+                justify-content: center;
+                align-content: center;
+                align-items: center;
+                margin: auto;
+            }
+
+                .label-filtro{
+                    width: 100%;
+                    height: 5px;
+                    font-size: 1.2em;
+                    color: black;
+                    margin: 0 20px;
+                }
+                    .label-filtro-select{
+                        width: 20vw;
+                        font-size: 1.5em;
+                        color: black;
+                        margin: 2vh 0vh 2vh 10vh;
+                    }
+                .input-filtro{
+                    font-size: 1.5em;
+                    width: 20px;
+                    height: 20px;
+                }
+                    .label-filtro:hover, .input-filtro:hover{
+                        cursor: pointer;
+                    }
+            .but-filtro{
+                margin: auto 10px;
+                width: 100%;
+                height: 40px;
+                border: none;
+                font-size: 1.2em;
+                color:white;
+                font-weight: bold;
+                border-radius: 10px;
+                background-color: #007bff;
+            }   
+
+            #contador {
+                margin: auto;
+                font-size: 1.5em;
+                width: 40%;
+                }
+
+            .clean-but{
+                width: 20%;
+                font-size: 2em;
+                background-color: transparent;
+                border: 0;
+                margin: auto;
+            }
+                .clean-but:hover{
+                    scale: 1.08;
+                    cursor: pointer;
+                }
+                .but-filtro:hover{
+                    background-color: #0056b3;
+                    cursor: pointer;
+                }
+
+        .conteudo{
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+            width: clamp(75%, 90%, 90%);
+        }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 3vh auto;
+                width: 100%;
+            }
+
+                li {
+                    background-color: #F5F5FC;
+                    border-radius: 12px;
+                    padding: 1.5rem 2rem;
+                    margin-bottom: 2vh;
+                    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    gap: 0.9rem;
+                }
+                    #listaItens li {
+                      display: flex;
+                      flex-wrap: wrap;
+                      align-items: left;
+                    }
+                        .item-geral{
+                            line-height: 1.4;
+                        }
+                            .item-grupo{
+                                display: flex;
+                                flex-wrap: wrap;                                
+                            }
+                        .item-nome{
+
+                        }
+                        .item-pais{
+                        }
+                        .item-autor{
+                        }
+                        .item-descricao {
+                            display: flex;
+                            font-size: 1rem;
+                            line-height: 1.4;
+                            text-align: justify;
+
+                        }
+                        .item-link{
+                        }
+                        .item-link-a {
+                            margin-top: 0.3rem;
+                            font-size: 0.9em;
+                            font-weight: 500;
+                            color: #3b5cff;
+                            text-decoration: none;
+                            align-self: flex-start;
+                        }
+
+                        .item-link-a:hover {
+                            text-decoration: underline;
+                        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

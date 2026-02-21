@@ -1,0 +1,606 @@
+@media (orientation:landscape){ 
+	body{		
+		display: flex;
+		width: 99vw;
+		flex-wrap: wrap;
+		overflow-x: hidden;
+		cursor: default;
+	}
+		header{
+			display: flex;
+			width: 99vw;
+			height: 45vh;
+			flex-wrap: wrap;
+			position: fixed;
+			margin: 0;
+			transition: top 0.5s ease;
+		}
+
+/*-----idioma-----*/
+
+#idioma{
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	position: fixed;
+	top: 15vh;
+	right: -80px;
+	background-color: grey;
+	z-index: 99999;
+	border-radius:10px 0 0 10px;
+	transition: right 0.5s ease-in-out;
+	opacity: 50%;
+}
+	#idioma-icone{
+		background-color: grey;
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		border-radius: 10px 0 0 10px;
+	}
+		.img-idioma{
+			position: relative;
+			width: 30px;
+			height: 30px;
+			margin: auto;
+		}
+	#idioma-opcao{
+		display: grid;
+		grid-area: 1fr 1fr 1fr;
+		margin: auto auto auto 5px;
+		background-color: grey;
+	}
+		.idioma-a{
+			margin: 1px auto 1px 0;
+			justify-content: space-around;
+			font-size: 1em;
+			text-align: left;
+			color: white;
+		}
+		#idioma:hover{
+			right: 0px;
+			opacity: 100%;
+		}
+		.idioma-a:hover{
+			scale: 1.1;
+		}
+
+/*-----idioma-fim-----*/
+
+/*-----cabeçalho-----*/
+		#img-home{
+			position: absolute;
+			z-index: 99;
+			margin: 0;
+			position: fixed;
+			width: 99vw;
+			height: 37.5vh;
+		}
+		#cabeçalho{
+			display: flex;
+			justify-content: space-around;
+			width: 99vw;
+			height: 37vh;
+			margin: 0;
+		}
+			h1{
+				width: 78vw;
+				margin: auto;
+				margin-left: 0;
+				font-size: 2.8em;
+				text-align: center;
+				z-index: 500;
+				color: black;
+				overflow-y: auto;
+			}
+		#navbar{
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content: space-around;
+			width: 99vw;
+			height: 8vh;
+			margin: 0;
+			align-items: center;
+			z-index: 400 !important;
+			background-color: #F8F8FF;
+
+			}
+			.navbar-txt, .acesso-content-nav{
+				font-family: sans-serif;
+				font-size: 1.5em;
+				color: black;
+				margin: auto;
+				text-decoration: none;
+				min-width: 14vw;				
+			}
+			.navbar-txt-acervo{
+				margin: auto;
+				text-align: center;
+			}
+			#navbar a:hover{
+				color: #397D50;
+			}
+			.nav-color:hover{
+				color: #397D50;
+			}
+				.sobre-span{
+					display: none;
+					width: 17vw;
+					position: absolute;
+					flex-wrap: wrap;
+					margin: auto;
+					align-items: center;
+					align-content: center;
+					justify-content: center;
+					background-color: #e1e1e1;
+					border-radius: 20px;
+					float: top;
+					z-index: 999;
+				}					
+					#nav-banco-span:hover .banco-span{
+						display: flex;
+					}
+					#nav-sobre-span:hover .sobre-span{
+						display: flex;
+					}
+				.sobre-span{
+					transform: translateX(-15px);
+				}		
+					.acesso-content-nav{
+						margin: 5px;
+					}
+						.acesso-content-nav:hover{
+							color: #666666;
+							cursor: pointer;
+						}
+		.span-panel{
+			display: none;
+			width: 350px;
+			position: absolute;
+			justify-content: center;
+			margin: auto;
+			text-align: center;
+			font-size: 0.7em;
+			color: black;
+			transform: translateY(-40px);
+			background-color: white;
+			border-radius: 10px;
+		}
+			.panel:hover .span-panel{
+				display: block;
+			}
+
+		.span-prod{
+			display: none;
+			width: 350px;
+			position: absolute;
+			justify-content: center;
+			margin: auto;
+			text-align: center;
+			font-size: 0.7em;
+			color: black;
+			transform: translateY(-60px);
+			background-color: white;
+			border-radius: 10px;
+		}
+			.prod:hover .span-prod{
+				display: block;
+			}
+
+/*----copiar contato----*/
+  .mensagem-copiado {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 5px;
+    z-index: 9999;
+  }
+  .btn-copiar {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 8px;
+  }
+  .btn-copiar:hover {
+    background-color: #0056b3;
+  }
+  .btn-copiar i {
+    margin-right: 5px;
+  }
+
+
+.contato-email{
+	display: none;
+	flex-wrap: wrap;
+	position: absolute;
+	width: 320px;
+	background-color: #e1e1e1;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	margin: auto;
+	padding: 5px 10px;
+	transform: translateX(-150px) translateY(5px);
+	color: black;
+	border-radius: 10px;
+}
+.contato-h{
+	padding: 5px;
+	cursor: default;
+}
+.contato-h:hover .contato-email{
+	display: flex;
+}
+
+
+
+
+
+.fundo-img{
+	right: 20px;
+	bottom: 70px;
+	margin: auto;
+	position: absolute;
+	z-index: 9999999;
+	color: black;
+	background-color: white;
+	opacity: 50%;
+	border-radius: 3px;
+}
+.fundo-img:hover{
+	opacity: 100%;
+}
+
+/*----logo----*/
+    .logo {
+        width: 12vw; /* Define a largura da imagem */
+        height: 12vw; /* Define a altura da imagem */
+        background-image: url('../img/logo.png'); /* Substitua pelo caminho da sua imagem */
+        background-size: cover;
+       
+        z-index: 99999999;
+        margin: auto;
+        margin-right: 0;
+        opacity: 100%;
+        border-radius: 100%;
+        border: 5px solid white;
+    }
+
+ /*------   
+ @keyframes spin {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+} .logo -> animation: spin 30s linear infinite;
+------*/
+
+
+/*----logo fim----*/
+/*-----cabeçalho-fim-----*/
+
+/*-----seta-----*/
+	.seta{
+		position: fixed;
+		font-size: 3em;
+		color: black;
+		font-weight: 600;
+		margin-top: 89vh;
+		margin-left: 95vw;
+		opacity: 50%;
+		z-index: 999;
+	}
+	.seta:hover {
+		opacity: 100%;
+	}
+
+/*-----seta-fim-----*/
+
+/*-----rodapé----*/
+footer{
+	display: flex;
+	justify-content: space-between;
+	width: 99vw;
+	min-height: 45vh;
+	opacity: 90%;
+	z-index: 0;
+	justify-content: space-around;
+	background-color: #DCDCDC;
+}
+	.contato{
+		width: 30%;
+		height: 50%;
+		margin-top: 30px;
+	}
+		.contato p{
+			margin: 15px auto 15px 30px;
+		}
+	.logo-footer{
+		width: 12vw;
+		height: 12vw;
+		margin: auto;
+	}
+/*mapa*/
+.sitemap{
+	display: flex;
+	flex-direction: column;
+	width: 15vw;
+	height: 35vh;
+	margin: auto;
+}
+	.sitemap a, .sitemap p{
+		color: black;
+		font-size: 1.2em;
+		text-align: left;
+	}
+	.sitemap ul{
+		list-style: none;
+		margin: auto 0;
+	}
+
+/*fotos*/
+.slideshow-container {
+    margin: auto;
+    overflow: hidden;
+    border-radius: 20px;
+    width: 43vw;
+    height: 35vh;
+    background-color: blue;
+    position: relative;
+}
+
+.imagem-slideshow {
+    width: 43vw;
+    height: 35vh;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    animation: slideshow 20s infinite;
+}
+
+.imagem-slideshow:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.imagem-slideshow:nth-child(2) {
+    animation-delay: 5s;
+}
+
+.imagem-slideshow:nth-child(3) {
+    animation-delay: 10s;
+}
+.imagem-slideshow:nth-child(4) {
+    animation-delay: 15s;
+}
+
+@keyframes slideshow {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    30% { opacity: 1; }
+    35% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+
+/*-----rodapé-fim-----*/
+.atualizado{
+	width: 99vw;
+	height: 20px;
+	display: block;
+	text-align: center;
+	font-size: 1em;
+	color: black;
+	background-color: #dcdcdc;
+}
+}
+
+
+@media (orientation: portrait){
+	body{		
+		display: none;
+		flex-wrap: wrap;
+		width: 99vw;
+		overflow-x: hidden;
+	}
+		header{
+			display: flex;
+			flex-wrap: wrap;
+			position: fixed;
+			width: 99vw;
+			height: 30vh;
+			transition: top 0.5s ease;
+			margin: 0;
+		}
+/*-----idioma-----*/
+		.language-div{
+			display: none;	/*-----gambiarra-----*/	
+		}
+		.language-div-portrait{
+			display: flex;
+			width: 99vw;
+			margin: 10px 20px 10px 0;
+			z-index: 999;
+		}
+			.language-span{
+				width: 40vw;
+			}
+			.language-select{
+				display: flex;
+				width: 59vw;
+				margin: auto;
+				justify-content: space-around;
+			}
+				.language-select-referencia{
+					width: 120px;
+					background-color: white;
+					text-align: center;
+					border-radius: 5px;
+				}
+					.language-select-referencia{
+						font-size: 1.3em;
+					}
+				.language-select-div-option{
+					display: none;
+					flex-wrap: wrap;
+					justify-content: center;
+					width: 120px;
+					height: 80px;
+					position: absolute;
+					margin-top: 30px;
+					background-color: white;
+					text-align: center;
+					border-radius: 5px;
+					align-items: center;
+				}
+					.language-select-div-option a{
+						font-size: 1.3em;
+						margin: 5px auto;
+					}
+				.language-select:hover .language-select-div-option{
+					display: flex;
+				}
+/*-----idioma-fim-----*/
+
+
+/*-----cabeçalho-----*/
+		#img-home{
+			position: absolute;
+			z-index: 99;
+			margin: 0;
+			position: fixed;
+			width: 99vw;
+			height: 30vh;
+			opacity: 10%;
+		}
+
+
+		#cabeçalho{
+			display: flex;
+			justify-content: space-around;
+			width: 99vw;
+			margin: 0;
+		}
+			h1{
+				margin: auto;
+				font-size: 1.5em;
+				text-align: center;
+				color: black;
+				text-shadow: -1px -1px 0 white;
+			}
+		#navbar{
+			display: block;
+			width: 99vw;
+			margin: auto;
+			align-items: center;
+			background-color: #F8F8FF;
+			}
+
+			.navbar-txt{
+				font-family: sans-serif;
+				font-size: 1.2em;
+				color: black;
+				margin: auto;
+				text-decoration: none;
+			}
+			.navbar-txt-acervo{
+				display: block;
+				margin: auto;
+			}
+			#navbar a:hover{
+				color: #666666;
+			}
+
+				.acesso-content-nav-span, .banco-span{
+					display: none;
+					position: absolute;
+					flex-wrap: wrap;
+					margin: auto;
+					align-items: center;
+					align-content: center;
+					justify-content: center;
+					background-color: #e1e1e1;
+					border-radius: 20px;
+				}
+				.acesso-content-nav-span{
+					width: 99vw;
+				}
+				.banco-span{
+					width: 99vw;
+				}
+				
+
+					#acervo-nav:hover .acesso-content-nav-span{
+						display: flex;
+						
+					}
+						#acervo-nav:hover{
+							cursor: pointer;
+						}
+
+					#nav-sobre-span:hover .sobre-span{
+						display: flex;						
+					}
+
+
+						#nav-sobre-span:hover{
+							cursor: pointer;
+						}
+					#nav-banco-span:hover .banco-span{
+						display: flex;
+					}
+						#nav-banco-span:hover{
+							cursor: pointer;
+						}
+
+					.acesso-content-nav:hover{
+						color: #666666;
+					}
+/*-----cabeçalho-fim-----*/
+
+}
+
+
+
+
+
+
+@media (max-height: 500px) and (max-width: 1200px) {
+  h1 {
+    font-size: 2em;
+  }
+  .navbar-txt, .acesso-content-nav{
+				font-size: 1em;			
+			}
+}
+
+#orientation-alert {
+	 display: none;
+    position: fixed;
+    inset: 0;
+    background: white;
+    color: black;
+    text-align: center;
+    padding: 2rem;
+    z-index: 99999;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
