@@ -1,25 +1,28 @@
 /* =========================
-const csvLocal = `
-tipo,codigo,descricao,autor,local,pais,link
-Livros e capítulos | Libros y capítulos | Books and chapters,livro,La concepción de ambiente en las tesis de maestrías en ciencias sociales La concepción de ambiente en las tesis de maestrías en ciencias socialesLa concepción de ambiente en las tesis de maestrías en ciencias socialesLa concepción de ambiente en las tesis de maestrías en ciencias socialesLa concepción de ambiente en las tesis de maestrías en ciencias socialesLa concepción de ambiente en las tesis de maestrías en ciencias sociales,Katherine Higuita Alzate,Institutional Repository of the Pontifical Bolivarian University,Colombia,https://repository.upb.edu.co/handle/20.500.11912/9777
-Artículos científicos | Artigos científicos | Scientific articles,artigo,Educación ambiental y conflictos socioambientales en territorios petroleros,María Fernanda López La concepción de ambiente en las tesis de maestrías en ciencias sociales María Fernanda López La concepción de ambiente en las tesis de maestrías en ciencias sociales,Repositorio Institucional UNAM,México,https://repositorio.unam.mx/
-Tesis de doctorado | Teses de doutorado | Doctoral theses,td,Formación docente y justicia ambiental en América Latina,Carlos Eduardo Ramírez,Repositorio Digital USP,Brasil,https://teses.usp.br/
-Disertaciones de maestría | Dissertações de mestrado | Master dissertations,td,Educación ambiental crítica en contextos escolares rurales,Juan Pablo Gómez,Repositorio Universidad de Antioquia,Colombia,https://repositorio.udea.edu.co/
-Capítulos de libro | Capítulos de livro | Book chapters,livro|co,Educación ambiental y participación comunitaria en zonas afectadas por el petróleo,Ana Lucía Torres,Repositorio Universidad del Valle,Colombia,https://bibliotecadigital.univalle.edu.co/
-Artículos en revistas | Artigos em revistas | Journal articles,artigo,Políticas educativas y sostenibilidad en contextos extractivos,Pedro Henrique Silva,Repositorio FGV,Brasil,https://bibliotecadigital.fgv.br/
-`;   ========================= */
+   BANCO DE DADOS (CSV LOCAL)
+
+   obs: 
+    tipo1: tese e dissertação
+    tipo2: livro e capitulo de livro
+    tipo3: artigo em revista
+    tipo4: artigo em anais de evento
+    tipo5: Relatório
+
+
+
+
+
+   ========================= */
 let dados = [];
 
-   fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQN3tihC9fA9hwIDLwI9stuL1-UQOZVubJ6G0_bOMDej3TUySXK-yO9unf3sbW40ph9HEv6-1DH2XN-/pub?gid=199551209&single=true&output=csv")
-  .then(res => res.text())
-  .then(csv => {
-    dados = processarCSV(csv);
-    renderizar(dados);
-  });
+fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQN3tihC9fA9hwIDLwI9stuL1-UQOZVubJ6G0_bOMDej3TUySXK-yO9unf3sbW40ph9HEv6-1DH2XN-/pub?gid=199551209&single=true&output=csv")
+ .then(res => res.text())
+ .then(csv => {
+   dados = processarCSV(csv);
+   renderizar(dados);
+ });
 
-/* =========================
-   MAPEAMENTOS
-   ========================= */
+/*-----------MAPEAMENTOS----------*/
 
 const mapaPaises = {
   ar: "Argentina",
@@ -30,11 +33,16 @@ const mapaPaises = {
   me: "México"
 };
 
-const tiposProducao = ["td", "livro", "artigo", "evento", "relatorio"];
+const codigo = ["td", "livro", "artigo", "evento", "relatorio",];
 
-/* =========================
-   PROCESSAR CSV
-   ========================= */
+const mapaTipos = {
+  tipo1: "Tesis de doctorado y maestría | Teses de doutorado e mestrado | Doctoral and Master's theses",
+  tipo2: "Libros y capítulos | Livros e capítulos | Book and chapter",  
+  tipo3: "Artículo científico | Artigo científico | Scientific papers",
+  tipo4: "Artículos en eventos | Artigos em eventos | Papers in events",
+  tipo5: "Informes | Relatório | Report"
+};
+/*-----------PROCESSAR CSV---------*/
 
 function processarCSV(csv) {
   const linhas = csv.trim().split("\n").slice(1);
@@ -54,9 +62,7 @@ function processarCSV(csv) {
   });
 }
 
-/* =========================
-   RENDERIZAÇÃO
-   ========================= */
+/*---------RENDERIZAÇÃO---------*/
 
 function renderizar(lista) {
   const ul = document.getElementById("listaItens");
@@ -67,12 +73,11 @@ function renderizar(lista) {
   lista.forEach(item => {
     const li = document.createElement("li");
 
-    const tipoFormatado = item.codigo.join(", ");
+    const tipoFormatado = mapaTipos[item.tipo] || item.tipo;
 
     li.innerHTML = `
-      <span class="item-geral item-nome">${item.tipo}<span>
+      <span class="item-geral item-nome">${tipoFormatado}</span>
       </br></br>
-
 
       <span class="item-grupo"> 
           <span class="item-geral">
@@ -114,9 +119,7 @@ function renderizar(lista) {
   contador.textContent = `📂 ${lista.length}`;
 }
 
-/* =========================
-   FILTRAR (BUSCA + CHECKBOX)
-   ========================= */
+/*----------------FILTRAR (BUSCA + CHECKBOX)-------------*/
 
 function filtrarLista() {
   const termoBusca = document
@@ -137,7 +140,7 @@ function filtrarLista() {
       return;
     }
 
-    if (tiposProducao.includes(cb.value)) {
+    if (codigo.includes(cb.value)) {
       filtrosTipo.add(cb.value);
     } else if (mapaPaises[cb.value]) {
       filtrosPais.add(mapaPaises[cb.value]);
@@ -191,7 +194,7 @@ function clean() {
    INICIALIZAÇÃO
    ========================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+   document.addEventListener("DOMContentLoaded", () => {
 
   fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQN3tihC9fA9hwIDLwI9stuL1-UQOZVubJ6G0_bOMDej3TUySXK-yO9unf3sbW40ph9HEv6-1DH2XN-/pub?gid=199551209&single=true&output=csv")
     .then(res => res.text())
@@ -203,6 +206,17 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("busca")
     .addEventListener("input", filtrarLista);
 });
+
+
+function ocultarfiltro() {
+    const filtro = document.getElementById('filtro');
+
+    if (filtro.style.display === 'none') {
+      filtro.style.display = 'flex';
+    } else {
+      filtro.style.display = 'none';
+    }
+  }
 
 // Função para esconder caixa de busca produção
 
@@ -217,8 +231,4 @@ window.addEventListener("scroll", function() {
       elements[i].style.display = "none";
     }
   }
-
 });
-
-
-
