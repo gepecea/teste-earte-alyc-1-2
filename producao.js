@@ -158,7 +158,7 @@ function filtrarLista() {
     const buscaOK =
       termoBusca === "" ||
       [
-        item.nome,
+        item.tipo,
         item.descricao,
         item.autor,
         item.local,
@@ -192,23 +192,17 @@ function clean() {
    ========================= */
 
 document.addEventListener("DOMContentLoaded", () => {
-  dados = processarCSV(csvLocal);
-  renderizar(dados);
 
-  // busca dinâmica enquanto digita
-  document.getElementById("busca").addEventListener("input", filtrarLista);
+  fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQN3tihC9fA9hwIDLwI9stuL1-UQOZVubJ6G0_bOMDej3TUySXK-yO9unf3sbW40ph9HEv6-1DH2XN-/pub?gid=199551209&single=true&output=csv")
+    .then(res => res.text())
+    .then(csv => {
+      dados = processarCSV(csv);
+      renderizar(dados);
+    });
+
+  document.getElementById("busca")
+    .addEventListener("input", filtrarLista);
 });
-
-
-function ocultarfiltro() {
-    const filtro = document.getElementById('filtro');
-
-    if (filtro.style.display === 'none') {
-      filtro.style.display = 'flex';
-    } else {
-      filtro.style.display = 'none';
-    }
-  }
 
 // Função para esconder caixa de busca produção
 
@@ -225,5 +219,6 @@ window.addEventListener("scroll", function() {
   }
 
 });
+
 
 
