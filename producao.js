@@ -7,22 +7,15 @@ Tesis de doctorado | Teses de doutorado | Doctoral theses,td,Formación docente 
 Disertaciones de maestría | Dissertações de mestrado | Master dissertations,td,Educación ambiental crítica en contextos escolares rurales,Juan Pablo Gómez,Repositorio Universidad de Antioquia,Colombia,https://repositorio.udea.edu.co/
 Capítulos de libro | Capítulos de livro | Book chapters,livro|co,Educación ambiental y participación comunitaria en zonas afectadas por el petróleo,Ana Lucía Torres,Repositorio Universidad del Valle,Colombia,https://bibliotecadigital.univalle.edu.co/
 Artículos en revistas | Artigos em revistas | Journal articles,artigo,Políticas educativas y sostenibilidad en contextos extractivos,Pedro Henrique Silva,Repositorio FGV,Brasil,https://bibliotecadigital.fgv.br/
-`;
+`;   ========================= */
+let dados = [];
 
-
-   ========================= */
    fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQN3tihC9fA9hwIDLwI9stuL1-UQOZVubJ6G0_bOMDej3TUySXK-yO9unf3sbW40ph9HEv6-1DH2XN-/pub?gid=199551209&single=true&output=csv")
   .then(res => res.text())
   .then(csv => {
     dados = processarCSV(csv);
     renderizar(dados);
   });
-
-/* =========================
-   VARIÁVEIS GLOBAIS
-   ========================= */
-
-let dados = [];
 
 /* =========================
    MAPEAMENTOS
@@ -232,4 +225,5 @@ window.addEventListener("scroll", function() {
   }
 
 });
+
 
