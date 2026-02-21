@@ -8,6 +8,7 @@
     tipo4: artigo em anais de evento
     tipo5: Relatório
 
+proximos passos: criar nova planilha oficial e trocr os 2  URLS
 
 
 
@@ -232,3 +233,4 @@ window.addEventListener("scroll", function() {
     }
   }
 });
+
