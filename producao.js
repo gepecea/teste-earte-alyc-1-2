@@ -11,8 +11,6 @@ Artículos en revistas | Artigos em revistas | Journal articles,artigo,Política
 
 
    ========================= */
-   BANCO DE DADOS (CSV LOCAL)
-
    fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQN3tihC9fA9hwIDLwI9stuL1-UQOZVubJ6G0_bOMDej3TUySXK-yO9unf3sbW40ph9HEv6-1DH2XN-/pub?gid=199551209&single=true&output=csv")
   .then(res => res.text())
   .then(csv => {
@@ -234,3 +232,4 @@ window.addEventListener("scroll", function() {
   }
 
 });
+
