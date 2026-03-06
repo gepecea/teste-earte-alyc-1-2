@@ -76,43 +76,51 @@ function renderizar(lista) {
 
     const tipoFormatado = mapaTipos[item.tipo] || item.tipo;
 
-    li.innerHTML = `
-      <span class="item-geral item-nome">${tipoFormatado}</span>
-      </br></br>
+li.innerHTML = `
+  <span class="item-geral item-nome">${tipoFormatado}</span>
+  </br></br>
 
-      <span class="item-grupo"> 
-          <span class="item-geral">
-              <strong>Pais | País| Country: </strong>
-                  <span class="item-pais"> ${item.pais}<span>
-              </span>
-          </span>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-          <span class="item-geral">
-              <strong>Autor | Author: </strong>
-                  <span class="item-autor">${item.autor}<span>
-              </span>
-          </span>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-          <span class="item-geral">
-              <strong>Local | Place: </strong>
-                  <span class="item-autor">${item.local}<span>
-              </span>
-          </span>     
-        
-          &nbsp;&nbsp;&nbsp;&nbsp;        
-      </span>
-      </br></br>
-
-      
+  <span class="item-grupo"> 
+      ${item.pais ? `
       <span class="item-geral">
-          <strong>Descripción | Descrição | Description: </strong>
-              <span class="item-descricao">${item.descricao}</span>
-          </span> 
-      </br></br>
-      
+          <strong>Pais | País| Country: </strong>
+          <span class="item-pais">${item.pais}</span>
+      </span>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      ` : ""}
 
-      <span class="item-geral item-link"><a class="item-link" href="${item.link}" target="_blank">🔗<strong>Link</strong></a><span>
-    `;
+      ${item.autor ? `
+      <span class="item-geral">
+          <strong>Autor | Author: </strong>
+          <span class="item-autor">${item.autor}</span>
+      </span>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      ` : ""}
+
+      ${item.local ? `
+      <span class="item-geral">
+          <strong>Local | Place: </strong>
+          <span class="item-autor">${item.local}</span>
+      </span>
+      ` : ""}
+  </span>
+
+  </br></br>
+
+  ${item.descricao ? `
+  <span class="item-geral">
+      <strong>Descripción | Descrição | Description: </strong>
+      <span class="item-descricao">${item.descricao}</span>
+  </span>
+  </br></br>
+  ` : ""}
+
+  ${item.link ? `
+  <span class="item-geral item-link">
+      <a class="item-link" href="${item.link}" target="_blank">🔗<strong>Link</strong></a>
+  </span>
+  ` : ""}
+`;
 
     ul.appendChild(li);
   });
@@ -233,4 +241,5 @@ window.addEventListener("scroll", function() {
     }
   }
 });
+
 
