@@ -46,21 +46,20 @@ const mapaTipos = {
 /*-----------PROCESSAR CSV---------*/
 
 function processarCSV(csv) {
-  const linhas = csv.trim().split("\n").slice(1);
-
-  return linhas.map(linha => {
-    const colunas = linha.split(",");
-
-    return {
-      tipo: colunas[0]?.trim(),
-      codigo: colunas[1]?.split("|").map(o => o.trim()) || [],
-      descricao: colunas[2]?.trim(),
-      autor: colunas[3]?.trim(),
-      local: colunas[4]?.trim(),
-      pais: colunas[5]?.trim(),
-      link: colunas[6]?.trim()
-    };
+  const resultado = Papa.parse(csv, {
+    header: true,
+    skipEmptyLines: true
   });
+
+  return resultado.data.map(linha => ({
+    tipo: linha.tipo?.trim(),
+    codigo: linha.codigo?.split("|").map(o => o.trim()) || [],
+    descricao: linha.descricao?.trim(),
+    autor: linha.autor?.trim(),
+    local: linha.local?.trim(),
+    pais: linha.pais?.trim(),
+    link: linha.link?.trim()
+  }));
 }
 
 /*---------RENDERIZAÇÃO---------*/
